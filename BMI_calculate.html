@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>this is a sample page</title>
+</head>
+<h1 align="center"> Body Mass Index</h1>
+<body>
+	<h2 align="center">weight(kg.)<input type="text" name="num1" id="num1" size="20" value=''><br></h2>
+    <h2 align="center">height(cm.)<input type="text" name="num2" id="num2" size="20" value=''><br></h2>
+	 <h2 align="center"><input type=button value='calculate' onClick="doEvent1();"><br></h2>
+     <h2 align="center">bmi(kg/m<sup>2<sub>) = <input type="text" name="result1" id="result1" size="10" value=''><br></h2>
+	<h2 align="center"><div id="showbmi"></div></h2>
+	<script>
+    function doEvent1()
+    {
+     var w=num1.value;
+     var h=num2.value;
+	 var objDiv = document.getElementById("showBMI");
+     result1.value=w/((h/100)*(h/100));
+	 
+	 if(result1.value >0 && result1.value <18.5 ){
+        objDiv.innerHTML="Underweight";
+		}
+	 else if(result1.value >=18.5 && result1.value <25){
+	    objDiv.innerHTML="Normal";
+		}
+	 else if(result1.value >=25 && result1.value <30){
+	    objDiv.innerHTML="overweight";
+		}
+	 else if(result1.value >=30 && result1.value <35){
+	    objDiv.innerHTML="Obese";
+		}	
+     else{
+	    objDiv.innerHTML="Extremely Obese";
+		}
+		
+    }
+</script>
+
+	</form>
+</body>
+</html>
